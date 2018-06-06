@@ -22,4 +22,7 @@ pwd is more or less implemented but the problem is that I need to implement it b
 int the main.py file is begin done.
 --2:14 PM
 
-##
+## 7:25 PM
+
+I am back in the game for some time. Its interesting to make something like this again, with a broader perspective.
+-- 7:26 PM
