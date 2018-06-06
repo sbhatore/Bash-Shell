@@ -26,3 +26,7 @@ int the main.py file is begin done.
 
 I am back in the game for some time. Its interesting to make something like this again, with a broader perspective.
 -- 7:26 PM
+
+## 10:53 PM
+Finished with cwd and pwd. Wrote a code like this after a long time. :) !!
+-- 10:53 PM
