@@ -2,7 +2,7 @@
 Elementary Bash Shell
 
 # Log File
-## 12:59 PM
+## 12:59 PM, 06 June, 2018
 
 I plan to implement what Dr. Suresh Purini sir asked us to implement in **Operating Systems** course using python.
 -- 1:01 PM
@@ -30,3 +30,12 @@ I am back in the game for some time. Its interesting to make something like this
 ## 10:53 PM
 Finished with cwd and pwd. Wrote a code like this after a long time. :) !!
 -- 10:53 PM
+
+## 07 June 2018
+### 10:56 AM
+I plan to start cd and rm commands now. Let's see.
+--10:56 AM
+
+### 11:51 AM
+Gotta do **ls** now. cd is implemented using ```chdir```, ghogho !!
+-- 11:52 AM
