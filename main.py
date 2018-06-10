@@ -1,36 +1,33 @@
 import sys, os
-
-class PrintCMD < Command:
-	def __init__(self, arg):
-
-	def printCWD(self):
-
-	def printPWD(self):
-
-	def printCD(self):
-
-	def printLS(self):
-
-class Processor < Command:
-	def __init__(self, arg):
-
-
-class Command:
 # This is the commands list.
-	cmd_list = ['cwd', 'pwd', 'man', 'cd', 'ls']
-# This function is to print the output of the command.
-	def printCMD(self, to_print):
-		print(to_print)
-# This function is for the folder name extraction.
+cmd_list = ['cwd', 'pwd', 'man', 'cd', 'ls']
+class PrintCMD(Command):
+	def __init__(self, command):
+		self.final = command
+		if(arg.type == list):
+			self.final = ''
+			for i in range(len(arg)):
+				self.final = self.final + " " + arg[i]
+# Print commands included
+	def printCWD(self):
+		print(self.final)
+	def printPWD(self):
+		print(self.final)		
+	def printCD(self):
+		print(self.final)
+	def printLS(self):
+		print(self.final)
+# Processor class for processing data 
+class Processor(Command):
+	# This function is for the folder name extraction.
 	def getCWD(self):
 		dirpath = os.getcwd()
 		foldername = os.path.basename(dirpath)
-		self.printCMD(foldername)
+		prcInst.printCWD(foldername)
 # This function is for present working directory, **pwd** extraction
 	def getPWD(self):
 		dirpath = os.getcwd()
-
-		self.printCMD(dirpath)
+		prcInst.printPWD(dirpath)
 # This function is similar to **cd** in bash
 	def getCD(self, path):
 		path = path
@@ -39,15 +36,34 @@ class Command:
 			path = '/home'
 		os.chdir(path)
 # This function is simlar to **ls** in bash
-	def getLS(self, path):
+	def getLS(self, path):	
 		path = path
 		if(path == ''):
-			printCMD(os.listdir('.'))
-		printCMD(os.listdir(path))
+			prcInst.printLS(os.listdir('.'))
+		prcInst.printLS(os.listdir(path))
+#	Constructor class
+	def __init__(self, cmd):
+		prcInst = PrintCMD(cmd)
+# Command class for taking in the relevant commands.
+class Command:
+	def getCWD(self):
+		pass
+	def getLS(self):
+		pass
+	def getPWD(self):
+  		pass
+	def getCD(self):
+ 		pass
+	def printCWD(self):
+		pass
+	def printPWD(self):
+ 		pass
+	def printCD(self):
+		pass 
+	def printLS(self):
+		pass 
 # Constructor Function also taking care of what the input is
 	def __init__(self, ip):
-		empty_list = []
-		procInst = Processor(self)
 		if(ip not in cmd_list):
 			print("Command is not in the domain list or it is an invalid combination. Try again please !!\n")
 		elif(ip == "cwd"):
@@ -72,7 +88,7 @@ def main():
 		curr_input = input()
 		cmdInst = Command(curr_input)
 		procInst = Processor(cmdInst)
-		printInst = PrintCMD(procInst)
+		procInst.printCMD()
 
 
 if __name__ == "__main__":
